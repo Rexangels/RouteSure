@@ -1,0 +1,7 @@
+flowchart LR
+  U[Operations user] --> W[React web app]
+  W --> A[FastAPI API]
+  A --> S[Postcode service adapter]
+  S --> N[NIPOST postcode API]
+  A -. planned persistence .-> D[(PostgreSQL)]
+  A -. planned telemetry .-> M[Metrics and audit events]
