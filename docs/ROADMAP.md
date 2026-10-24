@@ -1,13 +1,13 @@
 # RouteSure product and engineering roadmap
 
-This is the source of truth for what is implemented, what is in progress, what is blocked, and what must be true before a release. Check off work only after acceptance criteria and tests pass. CI execution is **pending confirmation** until the first workflow run completes.
+This is the source of truth for what is implemented, what is in progress, what is blocked, and what must be true before a release. Check off work only after acceptance criteria and tests pass.
 
 ## Current snapshot
 
 - **Foundation:** starter UI, FastAPI service, provider adapter, environment configuration, and product/architecture docs exist.
-- **Core test coverage:** backend API tests and frontend component/lookup tests have been added.
+- **Core quality gate:** backend tests, frontend tests, and the production build passed in GitHub Actions for commit 1449dc1.
 - **Address lookup UI:** wired to the backend autocomplete endpoint with loading, success, validation, API-error, and network-error states.
-- **CI:** GitHub Actions workflow added for backend tests, frontend tests, and production build.
+- **CI:** GitHub Actions workflow is active for backend tests, frontend tests, and production build.
 - **Critical blocker:** the NIPOST provider's current API contract (base URL, auth, routes, schemas, access terms) must be verified against official developer documentation before the integration can be considered live or reliable.
 - **Not yet production-ready:** authentication, tenant isolation, database persistence, migrations, rate limits, observability, end-to-end tests, and security review.
 
@@ -21,24 +21,18 @@ This is the source of truth for what is implemented, what is in progress, what i
 
 **Success looks like:** a new developer can understand the system, install dependencies, and identify which pieces are demo-only versus provider-backed. This phase does not claim production readiness.
 
-## Phase 1 — Core quality gate (in progress)
+## Phase 1 — Core quality gate (core baseline passed; hardening continues)
 
 - [x] Add backend API tests for health, valid autocomplete/lookup requests, input validation, missing credentials, and upstream timeout mapping.
 - [x] Add frontend tests for dashboard rendering, demo-data disclosure, lookup input validation, success response, API error, and network failure.
 - [x] Add CI workflow for backend tests, frontend tests, and frontend production build.
 - [x] Wire the lookup UI to the backend endpoint and add restricted local CORS configuration.
-- [ ] Run the first GitHub Actions workflow and fix every failure.
-- [ ] Verify the app builds and tests pass on a clean checkout.
+- [x] Run GitHub Actions: backend tests, frontend tests, and production build passed on commit 1449dc1.
 - [ ] Add tests for maximum query length, blank/whitespace input, malformed JSON, and provider HTTP status errors.
 - [ ] Add an API request timeout at the browser layer and accessible focus/status announcements.
 - [ ] Add a basic manual smoke-test checklist for Docker and frontend local development.
 
-**Exit criteria:**
-1. CI is green for both jobs on main.
-2. Backend tests make no real network calls and need no API key.
-3. Frontend tests pass deterministically without a browser or live API.
-4. Build succeeds from a clean checkout.
-5. UI never represents demo values as live validation results.
+**Success looks like:** core tests pass in a clean CI runner; default tests make no real provider calls and require no API key; the UI exposes loading/error/success states and never presents demo values as live validation results.
 
 ## Phase 2 — Official NIPOST integration (blocked on contract verification)
 
