@@ -1,30 +1,30 @@
 # RouteSure test cases and acceptance matrix
 
-Use this matrix alongside the implementation roadmap. “Added” means a test exists in the repository; it does not mean it has passed until CI reports green.
+Use this matrix alongside the implementation roadmap. “Added” means a test exists; “Passed” means the relevant CI job has reported success.
 
 ## Core automated tests
 
 | ID | Area | Scenario | Expected result | Status |
 |---|---|---|---|---|
-| API-001 | Health | GET /health | 200 and service status is ok | Added |
-| API-002 | Autocomplete | Valid query with mocked provider result | 200 and result passed through | Added |
-| API-003 | Autocomplete | Missing query | 422 validation response | Added |
-| API-004 | Autocomplete | One-character query | 422 validation response | Added |
-| API-005 | Lookup | Valid code and level | 200 and result passed through | Added |
-| API-006 | Lookup | Too-short code | 422 validation response | Added |
-| API-007 | Lookup | Level below/above allowed range | 422 validation response | Added |
-| API-008 | Provider config | Missing API key | 503; no provider request made | Added |
-| API-009 | Provider reliability | Timeout from adapter | 502 with generic message | Added |
-| API-010 | Credentials | Provider headers use configured server-side key | Header builder uses configured key; no frontend key configured | Added |
-| WEB-001 | Dashboard | Core heading and navigation entry points render | Expected content is accessible | Added |
-| WEB-002 | Demo disclosure | Demo data notice is visible | UI does not imply demo counts are live | Added |
-| WEB-003 | Lookup validation | Query shorter than two characters | Inline error; fetch is not called | Added |
-| WEB-004 | Lookup success | Mock API returns JSON | Result preview is displayed | Added |
-| WEB-005 | API failure | Mock API returns non-2xx response | Safe error message is displayed | Added |
-| WEB-006 | Network failure | Fetch rejects | Network error is displayed | Added |
-| CI-001 | Backend | Run pytest on clean checkout | All backend tests pass | Pending first CI run |
-| CI-002 | Frontend | Run Vitest once | All frontend tests pass | Pending first CI run |
-| CI-003 | Build | TypeScript check and Vite production build | Build exits successfully | Pending first CI run |
+| API-001 | Health | GET /health | 200 and service status is ok | Passed in CI |
+| API-002 | Autocomplete | Valid query with mocked provider result | 200 and result passed through | Passed in CI |
+| API-003 | Autocomplete | Missing query | 422 validation response | Passed in CI |
+| API-004 | Autocomplete | One-character query | 422 validation response | Passed in CI |
+| API-005 | Lookup | Valid code and level | 200 and result passed through | Passed in CI |
+| API-006 | Lookup | Too-short code | 422 validation response | Passed in CI |
+| API-007 | Lookup | Level below/above allowed range | 422 validation response | Passed in CI |
+| API-008 | Provider config | Missing API key | 503; no provider request made | Passed in CI |
+| API-009 | Provider reliability | Timeout from adapter | 502 with generic message | Passed in CI |
+| API-010 | Credentials | Provider headers use configured server-side key | Header builder uses configured key | Passed in CI |
+| WEB-001 | Dashboard | Core heading and navigation entry points render | Expected content is accessible | Passed in CI |
+| WEB-002 | Demo disclosure | Demo data notice is visible | UI does not imply demo counts are live | Passed in CI |
+| WEB-003 | Lookup validation | Query shorter than two characters | Inline error; fetch is not called | Passed in CI |
+| WEB-004 | Lookup success | Mock API returns JSON | Result preview is displayed | Passed in CI |
+| WEB-005 | API failure | Mock API returns non-2xx response | Safe error message is displayed | Passed in CI |
+| WEB-006 | Network failure | Fetch rejects | Network error is displayed | Passed in CI |
+| CI-001 | Backend | Run pytest on clean checkout | All backend tests pass | Passed |
+| CI-002 | Frontend | Run Vitest once | All frontend tests pass | Passed |
+| CI-003 | Build | TypeScript check and Vite production build | Build exits successfully | Passed |
 
 ## Required next tests
 
