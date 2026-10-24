@@ -2,6 +2,10 @@
 
 This is the source of truth for what is implemented, what is in progress, what is blocked, and what must be true before a release. Check off work only after acceptance criteria and tests pass.
 
+## Business execution
+
+The current business strategy is to target Nigerian courier and logistics operators, keep initial spending modest, and validate recurring side income through a controlled pilot. See [docs/90_DAY_EXECUTION_PLAN.md](90_DAY_EXECUTION_PLAN.md) for the 90-day execution plan and [docs/BUSINESS_VALIDATION_PLAN.md](BUSINESS_VALIDATION_PLAN.md) for interview, pilot, and pricing hypotheses. These are targets, not evidence that demand or profitability is already validated.
+
 ## Current snapshot
 
 - **Foundation:** starter UI, FastAPI service, provider adapter, environment configuration, and product/architecture docs exist.
@@ -86,13 +90,14 @@ This is the source of truth for what is implemented, what is in progress, what i
 
 ## Phase 6 — Controlled pilot
 
-- [ ] Recruit a small number of logistics/e-commerce pilot users.
+- [ ] Recruit 3–5 Nigerian courier/logistics pilot users.
 - [ ] Onboard with explicit terms and approved data only.
-- [ ] Establish baseline and definitions for validation completion, correction rate, provider latency/error rate, and address-related failed deliveries.
+- [ ] Establish baseline and definitions for lookup completion, confirmation/correction rate, provider latency/error rate, staff time, and address-related failed deliveries.
 - [ ] Review weekly with pilot users and prioritise the highest-impact friction.
 - [ ] Agree commercial pricing and provider costs before general availability.
+- [ ] Ask for a paid continuation; do not treat positive feedback as proof of willingness to pay.
 
-**Success looks like:** users complete address checks reliably, provider results are understood rather than over-trusted, support burden is measured, and privacy/security obligations are met. Do not use demo dashboard metrics as evidence of pilot outcomes.
+**Success looks like:** at least one operator commits to paying for a pilot or subscription, the workflow improves a defined customer outcome, provider terms allow the intended use, and conservative contribution margin is plausible. Do not use demo dashboard metrics as evidence of pilot outcomes.
 
 ## Definition of done for every feature
 
