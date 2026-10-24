@@ -5,7 +5,7 @@ import App from './App';
 describe('RouteSure dashboard scaffold', () => {
   it('renders the product name and primary dashboard heading', () => {
     render(<App />);
-    expect(screen.getByText('RouteSure')).toBeInTheDocument();
+    expect(screen.getByText('ADDRESS INTELLIGENCE')).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /address intelligence, made clear/i })).toBeInTheDocument();
   });
 
