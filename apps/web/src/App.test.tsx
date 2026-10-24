@@ -31,7 +31,7 @@ describe('RouteSure dashboard scaffold', () => {
   it('clearly labels the dashboard as a demo rather than live data', () => {
     render(<App />);
     expect(screen.getByText(/demo data only/i)).toBeInTheDocument();
-    expect(screen.getByText(/development preview/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/development preview/i).length).toBeGreaterThan(0);
   });
 
   it('shows the provider setup as the next integration step', () => {
