@@ -1,0 +1,14 @@
+sequenceDiagram
+  actor Operator
+  participant Web as RouteSure Web
+  participant API as FastAPI
+  participant Adapter as NIPOST Adapter
+  participant NIPOST as NIPOST API
+  Operator->>Web: Enter address/postcode query
+  Web->>API: GET /v1/search/autocomplete?q=...
+  API->>Adapter: Validate and forward query
+  Adapter->>NIPOST: Provider request with server-side key
+  NIPOST-->>Adapter: Provider response
+  Adapter-->>API: Parsed JSON or provider error
+  API-->>Web: Result / mapped error
+  Web-->>Operator: Show provider-backed data and confidence
